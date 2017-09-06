@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	
+	<context:annotation-config />
+	<bean class="com.javalec.ex.ApplicationConfig"/>
+	
+	<bean id="myFamily" class="com.javalec.ex.Family">
+		<constructor-arg value="성종현"/>
+		<constructor-arg value="이상희"/>
+		
+		<property name="brotherName" value="성한규"/>
+	</bean>
+
+	<bean id="hyunseok" class="com.javalec.ex.Student">
+		<constructor-arg value="성현석"/>
+		<property name="height" value="180"/>
+		<property name="weight" value="70"/>
+		<property name="age" value="25"/>
+		<property name="family">
+			<ref bean="myFamily"/>
+		</property>
+	</bean>
+
+
+</beans>
